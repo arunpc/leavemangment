@@ -1,0 +1,192 @@
+<?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: subbalakshmi
+ * Date: 16/12/13
+ * Time: 10:33 AM
+ * To change this template use File | Settings | File Templates.
+ */
+
+namespace Application\Model;
+
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Table(name="leave")
+ * @ORM\Entity(repositoryClass="Application\Model\Leave")
+ */
+class Leave extends Entity
+{
+
+
+    protected $employee_id;
+
+    public function getEmployee()
+    {
+        return $this->employee_id;
+    }
+
+    public function setEmployee($employee_id)
+    {
+        $this->name = $employee_id;
+    }
+
+    protected $leave_type_id;
+
+    public function getLeavetype()
+    {
+        return $this->leave_type_id;
+    }
+
+    public function setLeavetype($leave_type_id)
+    {
+        $this->name = $leave_type_id;
+    }
+
+    protected $no_of_days;
+
+    public function getDays()
+    {
+        return $this->no_of_days;
+    }
+
+    public function setDays($no_of_days)
+    {
+        $this->name = $no_of_days;
+    }
+
+    protected $status_id;
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function setStatus($status_id)
+    {
+        $this->status = $status_id;
+    }
+
+    protected $comments;
+
+
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    public function setComments($comments)
+    {
+        $this->status = $comments;
+    }
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @var string
+     */
+    protected $date;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @var string
+     */
+    protected $status;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @var String
+     */
+    protected $name;
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    public function setDate($date)
+    {
+        $this->date = $date;
+        return $this;
+    }
+
+
+}
+
+
+===============
+
+<?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: subbalakshmi
+ * Date: 16/12/13
+ * Time: 10:33 AM
+ * To change this template use File | Settings | File Templates.
+ */
+
+namespace Application\Model;
+
+use Doctrine\ORM\Mapping as ORM;
+/**
+ * @ORM\Table(name="employee")
+ * @ORM\Entity(repositoryClass="Application\Model\Employee")
+ */
+class Employee extends Entity
+{
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @var string
+     */
+    protected $password;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @var string
+     */
+    protected $position;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     * @var String
+     */
+    protected $name;
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function settName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function setPassword($password)
+    {
+        $this->password = $password;
+        return $this;
+    }
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    public function setPosition($position)
+    {
+        $this->position = $position;
+    }
+
+}

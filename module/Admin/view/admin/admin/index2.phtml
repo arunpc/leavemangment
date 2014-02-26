@@ -1,0 +1,36 @@
+<?php
+$title = 'Leave List';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+
+<table class="table">
+    <tr>
+
+        <th>Date</th>
+        <th>Employee</th>
+        <th>Leave Type</th>
+        <th>Number of days</th>
+        <th>Status</th>
+        <th>Comments</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+    </tr>
+    <?php foreach($posts as $album) :?>
+        <tr>
+            <td><?php echo $this->escapeHtml($album->getDate());?></td>
+            <td><?php echo $this->escapeHtml($album->getEmployee());?></td>
+            <td><?php echo $this->escapeHtml($album->getType());?></td>
+            <td><?php echo $this->escapeHtml($album->getDays());?></td>
+            <td><?php echo $this->escapeHtml($album->getStatus());?></td>
+            <td><?php echo $this->escapeHtml($album->getComments());?></td>
+
+            <td>
+                <a href="">Edit</a>
+                <a href="">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>

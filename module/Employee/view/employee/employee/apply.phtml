@@ -1,0 +1,58 @@
+<?php
+$title = 'New Leave Application';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?>  </h1>
+<div >
+
+</div>
+<br/>
+<form name="apply" id="apply" action="" method="post" >
+<table class="table">
+    <tr>
+
+        <th colspan="2"><b>Apply Leave</b></th>
+
+
+    </tr>
+    <tr>
+        <td>Leave Type</td>
+        <td>
+            <select name="l_type" required="required" >
+                <option value="">-Select Leave Type-</option>
+                <option value="sick" >Sick Leave</option>
+                <option value="casual">Casual Leave</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            From Date
+        </td>
+        <td>
+            <input class="input-sm" type="date" name="lesson-from"  id="lesson-from" readonly="true" required="required">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            To Date
+        </td>
+        <td>
+            <input class="input-sm" type="date" name="lesson-to" id="lesson-to" readonly="true" required="required">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Comment
+        </td>
+        <td>
+            <textarea name="comments" required="required" ></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" > <input class="btn btn-info pull-right btn-xs" type="submit" name="submit" value="submit"></td>
+
+    </tr>
+
+</table>
+    </form>
